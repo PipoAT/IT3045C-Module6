@@ -17,6 +17,11 @@ public class Books
     [MaxLength(50)]
     public string Genre { get; set; }
 
-    public virtual Authors Authors { get; set; }
+    public int AuthorID { get; set; }
+    public int GenreID { get; set; } 
+
+    public virtual List<Authors> Authors { get; set; }
+
+    public virtual List<Genres> Genres { get; set; }
 
 }

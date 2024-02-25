@@ -9,4 +9,6 @@ public class Genres
     public int GenreID { get; set; }
     [MaxLength(50)]
     public string Genre { get; set; }
+
+    public virtual List<Books> Books { get; set; }
 }
