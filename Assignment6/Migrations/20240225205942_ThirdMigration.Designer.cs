@@ -2,6 +2,7 @@
 using Assignment6.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment6.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240225205942_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
@@ -75,11 +78,6 @@ namespace Assignment6.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Author")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("AuthorID")
                         .HasColumnType("INTEGER");
 
@@ -104,7 +102,6 @@ namespace Assignment6.Migrations
                         new
                         {
                             BookID = 1,
-                            Author = "Andrew Pipo",
                             AuthorID = 1,
                             GenreID = 1,
                             ISBN = "1",
@@ -113,7 +110,6 @@ namespace Assignment6.Migrations
                         new
                         {
                             BookID = 2,
-                            Author = "Steve Jobs",
                             AuthorID = 2,
                             GenreID = 2,
                             ISBN = "2",
@@ -122,7 +118,6 @@ namespace Assignment6.Migrations
                         new
                         {
                             BookID = 3,
-                            Author = "Bruce Wayne",
                             AuthorID = 3,
                             GenreID = 3,
                             ISBN = "3",
@@ -131,7 +126,6 @@ namespace Assignment6.Migrations
                         new
                         {
                             BookID = 4,
-                            Author = "Bob Builder",
                             AuthorID = 4,
                             GenreID = 4,
                             ISBN = "4",
@@ -140,7 +134,6 @@ namespace Assignment6.Migrations
                         new
                         {
                             BookID = 5,
-                            Author = "Santa Claus",
                             AuthorID = 5,
                             GenreID = 5,
                             ISBN = "5",

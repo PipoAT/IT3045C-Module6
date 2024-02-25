@@ -14,8 +14,6 @@ public class Books
     public string Title { get; set; }
     [MaxLength(50)]
     public string Author {get; set; }
-    [MaxLength(50)]
-    public string Genre { get; set; }
 
     public int AuthorID { get; set; }
     public int GenreID { get; set; } 
